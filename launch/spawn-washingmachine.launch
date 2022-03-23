@@ -1,0 +1,15 @@
+<launch>
+  
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused"       value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui"          value="true"/>
+    <arg name="recording"    value="false"/>
+    <arg name="debug"        value="true"/>
+  </include>
+  
+  <!-- Spawn a robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
+        args="-file $(find 3dmodeling-examples)/models/gazebo_models/washing-machine/model.sdf -sdf -x 0.0 -y 2.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0 -model washing-machine" />
+  
+</launch>
