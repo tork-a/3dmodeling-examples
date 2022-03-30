@@ -13,11 +13,13 @@
       <pose>0 0 0 0 0 0</pose>
     </include>
     
+<!--
     <include>
       <uri>model://washing-machine-dae</uri>
       <name>washing-machine-dae</name>
       <pose>0 1.0 0 0 0 0</pose>
     </include>
+-->
     
   </world>
 </sdf>
