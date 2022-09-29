@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+
+<robot name="washing-machine">
+  
+  <link name="base_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://3dmodeling-examples/models/urdf/meshes/washing-machine/main-body.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://3dmodeling-examples/models/urdf/meshes/washing-machine/main-body.dae" />
+      </geometry>
+    </visual>
+  </link>
+  
+  <link name="door">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://3dmodeling-examples/models/urdf/meshes/washing-machine/door.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://3dmodeling-examples/models/urdf/meshes/washing-machine/door.dae" />
+      </geometry>
+    </visual>
+  </link>
+  
+  <link name="tray">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://3dmodeling-examples/models/urdf/meshes/washing-machine/tray.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://3dmodeling-examples/models/urdf/meshes/washing-machine/tray.dae" />
+      </geometry>
+    </visual>
+  </link>
+  
+  <joint name="joint1" type="revolute">
+    <parent link="base_link"/>
+    <child  link="door"/>
+    <origin xyz="0.30658 -0.258 0.67582" rpy="0 -0.1396 0"/>
+    <axis xyz="0 0 1" />
+    <limit effort="30" velocity="1.0" lower="-1.8326" upper="0.0" />
+  </joint>
+  
+  <joint name="joint2" type="prismatic">
+    <parent link="base_link"/>
+    <child  link="tray"/>
+    <origin xyz="0.0 -0.190 0.956" rpy="0 0 0"/>
+    <axis xyz="1 0 0" />
+    <limit effort="30" velocity="1.0" lower="0.0" upper="0.200" />
+  </joint>
+  
+</robot>
